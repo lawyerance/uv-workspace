@@ -1,0 +1,11 @@
+server_context_path = '/examples'
+
+[app]
+name = "my-app"
+version = "1.0.0"
+
+[local]
+app.id = 100
+
+[sit]
+app.id = 101
