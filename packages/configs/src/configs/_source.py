@@ -19,7 +19,7 @@ class _LocalSettings(BaseSettings):
     #     toml_file = "config/app.toml"
 
     model_config = SettingsConfigDict(
-        env_file=".env.local",
+        env_file=".env",
         env_file_encoding="utf-8",
         case_sensitive=False,
         toml_file="config/app.toml",
@@ -57,8 +57,8 @@ class _SingleTomlMultiEnvSettingsSource(TomlConfigSettingsSource):
         data = super()._read_file(file_path)
         return self.remove_unselected_env_blocks(data)
 
-    def remove_unselected_env_blocks(self, input: dict[str, Any]) -> dict[str, Any]:
-        toml_data = input.copy()
+    def remove_unselected_env_blocks(self, in_data: dict[str, Any]) -> dict[str, Any]:
+        toml_data = in_data.copy()
         env_data = toml_data.pop(self.env, {})
         unselected = set(self.env_blocks) - {self.env}
         for key in unselected:

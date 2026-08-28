@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=./app-config-schema.json
+
+server_context_path: /schema
+server:
+    host: 127.0.0.1
+    port: 5432

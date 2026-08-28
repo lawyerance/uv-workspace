@@ -13,6 +13,7 @@ dependencies = [
     "uvicorn>=0.49.0",
     "web",
     "configs",
+    "sqlalchemy>=2.0.52",
 ]
 
 [dependency-groups]
@@ -36,7 +37,7 @@ requires = ["hatchling>=1.21.0"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/external", "src/fastapi_router"]
+packages = ["src/external", "src/fastapi_router", "src/examples"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

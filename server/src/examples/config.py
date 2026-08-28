@@ -1,11 +1,18 @@
 import os
 
+from pydantic import BaseModel
 from pydantic_settings import BaseSettings, PydanticBaseSettingsSource, SettingsConfigDict
 from typing_extensions import Type
 from configs import SingleTomlMultiEnvSettingsSource
 
 
+class App(BaseModel):
+    id: int
+    name: str
+
+
 class Setting(BaseSettings):
+    app: App
     model_config = SettingsConfigDict(
         env_file=".env.local",
         env_file_encoding="utf-8",

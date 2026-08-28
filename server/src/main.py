@@ -1,16 +1,14 @@
 """Launcher: run with `uvicorn main:app`."""
 import logging
-import os
 
-import dotenv
 import uvicorn
+from configs.cpy import settings
 from fastapi import FastAPI, APIRouter, Depends
+from middleware.fastapi_plugin import basic_authenticate, LoggingRequestMiddleware
 from starlette.middleware.cors import CORSMiddleware
 
-from configs.cpy import settings
 from fastapi_router.admin import admin
 from fastapi_router.api import r1
-from middleware.fastapi_plugin import basic_authenticate, LoggingRequestMiddleware
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 

@@ -1,4 +1,6 @@
-server_context_path = '/examples'
+# yaml-language-server: $schema=./app-config-schema.json
+
+#server_context_path = '/examples'
 
 [app]
 name = "my-app"
@@ -9,3 +11,5 @@ app.id = 100
 
 [sit]
 app.id = 101
+
+#local.app.name='120h'
