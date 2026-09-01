@@ -14,6 +14,7 @@ dependencies = [
     "web",
     "configs",
     "sqlalchemy>=2.0.52",
+    "omegaconf>=2.3.1",
 ]
 
 [dependency-groups]

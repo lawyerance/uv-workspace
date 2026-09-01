@@ -1,5 +1,4 @@
 from sqlalchemy import create_pool_from_url, make_url
-from urllib.parse import parse_qs
 
 
 def convert_postgres_jdbc_to_sa(jdbc_url: str, username: str = None, password: str = None,

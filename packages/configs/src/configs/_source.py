@@ -40,6 +40,14 @@ def deep_merge(dict1: dict, dict2: dict) -> dict:
             result[key] = value
     return result
 
+class _SinglgYamlEnvSettingsSource():
+    def __init__(self, settings_cls: type[BaseSettings],
+                 profiles: tuple[str, ...] = ('defaults'),
+                 **kwargs):
+        super().__init__(settings_cls, env, **kwargs)
+
+    def _read_file(self, file_path: str) -> dict:
+        return None
 
 class _SingleTomlMultiEnvSettingsSource(TomlConfigSettingsSource):
 

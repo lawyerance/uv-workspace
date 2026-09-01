@@ -13,3 +13,8 @@ wheels/
 .env*
 .idea/
 .pytest_cache/
+
+# VS Code
+.vscode/
+!.vscode/launch.json
+!.vscode/settings.json
