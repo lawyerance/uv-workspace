@@ -1,0 +1,9 @@
+defaults: &defaults
+  app:
+    id: xxxx1
+
+
+dev:
+  <<: *defaults
+  aigw:
+    api-key: sk-123
